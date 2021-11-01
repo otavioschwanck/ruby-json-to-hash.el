@@ -1,0 +1,45 @@
+* About
+Convert JSON into hash and play with the keys on your tests!
+
+[[file:demo.gif]]
+
+* Installation
+** Manual
+Load =ruby-json-to-hash.el= in your personal configuration.
+
+** MELPA
+Coming soon.
+
+* Features
+- Convert JSON into Hash
+- Move a key from the converted hash to a let
+- Move back the let to the parent hash
+
+* Configuring
+
+Example of how to set the shortcuts:
+
+#+begin_src emacs-lisp
+;; On vanilla
+(define-key ruby-mode-map (kbd "C-c ! J") 'ruby-json-to-hash-parse-json) ;; Parse the json
+(define-key ruby-mode-map (kbd "C-c ! j") 'ruby-json-to-hash-toggle-let) ;; Create a let or send the let back to parent
+
+;; On doom emacs
+(map! :mode ruby-mode :localleader "J" 'ruby-json-to-hash-parse-json) ;; Parse the json, SPC m J
+(map! :mode ruby-mode :localleader "j" 'ruby-json-to-hash-toggle-let) ;; Create a let or send the let back to parent. SPC m j
+#+end_src
+
+* My other works:
+** Rails i18n:
+https://github.com/otavioschwanck/rails-i18n.el
+
+** Rails routes:
+https://github.com/otavioschwanck/rails-routes.el
+
+** My Personal Config (for rails)
+(Very complete, has videos + handbooks of how to use)
+https://github.com/otavioschwanck/doom-emacs-on-rails/
+
+* Do you like my work?  Please, buy me a coffee
+
+https://www.buymeacoffee.com/otavioschwanck
