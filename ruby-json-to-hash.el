@@ -4,7 +4,7 @@
 
 ;; Author: Otávio Schwanck dos Santos <otavioschwanck@gmail.com>
 ;; Keywords: tools languages
-;; Homepage: https://github.com/otavioschwanck/rails-json-to-hash.el
+;; Homepage: https://github.com/otavioschwanck/ruby-json-to-hash.el
 ;; Version: 0.1
 ;; Package-Requires: ((emacs "27.2") (smartparens "20210904.1621") (string-inflection "1.0.16"))
 
