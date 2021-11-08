@@ -6,7 +6,7 @@
 ;; Keywords: tools languages
 ;; Homepage: https://github.com/otavioschwanck/ruby-json-to-hash.el
 ;; Version: 0.1
-;; Package-Requires: ((emacs "27.2") (smartparens "20210904.1621") (string-inflection "1.0.16"))
+;; Package-Requires: ((emacs "27.2") (smartparens "1.11.0") (string-inflection "1.0.16"))
 
 ;; This program is free software; you can redistribute it and/or modify
 ;; it under the terms of the GNU General Public License as published by
@@ -179,7 +179,7 @@
 
 (defun ruby-json-to-hash--insert-key-array (key)
   "Insert the key if it is an array.  KEY: key to be inserted."
-  (insert (concat (format "%s" (car key)) ": ["))
+  (insert (format "%s" (car key)) ": [")
   (mapc 'ruby-json-to-hash--insert-key-from-array (cdr key))
   (insert "],\n"))
 
@@ -194,7 +194,7 @@
 
 (defun ruby-json-to-hash--insert-key-hash (key)
   "Insert the key from if is an hash.  KEY: key to be inserted."
-  (insert (concat (format "%s" (car key)) ": {\n "))
+  (insert (format "%s" (car key)) ": {\n ")
   (mapc
    (lambda (hash_key)
      (ruby-json-to-hash--insert-key hash_key)) (cdr key))
@@ -202,8 +202,7 @@
 
 (defun ruby-json-to-hash--insert-value (key)
   "Insert the value if is not an normal type.  KEY: key to be inserted."
-  (insert (concat
-           (format "%s" (car key)))
+  (insert (format "%s" (car key))
           ": " (ruby-json-to-hash--insert-value--insert-by-value-type (cdr key))
           ",\n"))
 
